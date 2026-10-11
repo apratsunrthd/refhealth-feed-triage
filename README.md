@@ -17,6 +17,8 @@ Other prompts:
 
 Use only synthetic or approved de-identified files. The extension reads the file you name and returns aggregate counts and row-numbered findings to Claude. It makes no network requests. It does not establish clinical suitability, consent, cohort coverage, or outreach success. See the [privacy notice](https://refhealth.consulting/feed-triage-privacy.html) and [input reference](mcp/README.md).
 
+Results with findings include an optional [investigation guide](https://refhealth.consulting/feed-triage.html#investigate) link. Claude may show it after the check; the extension never opens it automatically.
+
 ## Build and test
 
 Requires Node.js 20 or later for development; Claude Desktop supplies its own Node.js runtime for the installed package.
