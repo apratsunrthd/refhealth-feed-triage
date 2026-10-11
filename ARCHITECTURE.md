@@ -5,3 +5,5 @@ Claude Desktop loads the `.mcpb` archive and starts `mcp/server.mjs` over MCP st
 CSV checks validate required columns and timezone-aware timestamps, deduplicate matching retries, exclude conflicting duplicate IDs, and compute delivery rates and latency summaries. FHIR Bundle checks cover Encounter IDs, subject references, encounter period ordering, and references to Patients present in the supplied Bundle. FHIR `meta.lastUpdated` is not treated as delivery time.
 
 The server has no HTTP client, persistence, telemetry, account, or API key. Its trust boundary is the local file the user names and the tool result sent to Claude. The landing page and privacy notice live at `refhealth.consulting`; they are outside the extension runtime.
+
+When findings exist, the server adds a fixed investigation-guide URL to the result. The URL has campaign tags but no file path or record content. No network request occurs unless the user opens the link.

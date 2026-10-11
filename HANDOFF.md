@@ -6,4 +6,6 @@ Run `npm ci --prefix mcp`, `npm test --prefix mcp`, and `./scripts/build-feed-bu
 
 The server reads only the absolute file path passed to it (or its bundled sample), caps input at 10 MB and 20,000 rows/entries, and returns aggregate findings. Claude receives the tool response. The package is local and makes no network calls.
 
-The 0.1.1 package was submitted to Anthropic's desktop extension directory on 2026-10-11. Monitor `contact@refhealth.consulting` for a review response; a submission does not guarantee listing.
+Version 0.1.2 includes a fixed public investigation-guide URL only when findings exist. The URL has campaign tags but no feed data or file path. Claude may present the link; the user must choose to open it.
+
+The 0.1.1 package was submitted to Anthropic's desktop extension directory on 2026-10-11. That submission predates the 0.1.2 guide link. Monitor `contact@refhealth.consulting` for a review response; a submission does not guarantee listing.
