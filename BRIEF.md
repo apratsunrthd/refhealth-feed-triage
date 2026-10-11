@@ -4,4 +4,4 @@ Healthcare Feed Triage is a free local MCP extension for Claude Desktop. It insp
 
 The extension is intended to help a data team ask better questions about a proposed operational trigger. It cannot establish complete feed coverage, patient consent, clinical suitability, or outreach success. The [product page](https://refhealth.consulting/feed-triage.html) hosts the installable package.
 
-Current work: publish source and submit the tested package for desktop extension directory review. Directory acceptance is not guaranteed. Next: gather feedback from users with approved de-identified extracts before adding more rules.
+Version 0.1.1 was submitted to Anthropic's desktop extension directory on 2026-10-11. Directory acceptance is not guaranteed. Next: gather feedback from users with approved de-identified extracts before adding more rules.
