@@ -2,11 +2,42 @@
 
 A free, local Claude Desktop extension that checks whether a healthcare event feed has the timing and quality signals needed to investigate an operational use case. It inspects CSV event feeds or FHIR Bundles through one read-only MCP tool. The [product page](https://refhealth.consulting/feed-triage.html) has a ready-to-install download and example findings.
 
-## Install and try it
+## Installation Options
+
+### 1. Smithery CLI (Cursor, Windsurf, Claude)
+
+Install and register automatically via [Smithery](https://smithery.ai):
+
+```bash
+npx -y @smithery/cli install @apratsunrthd/refhealth-feed-triage --client claude
+```
+
+Or for Cursor:
+```bash
+npx -y @smithery/cli install @apratsunrthd/refhealth-feed-triage --client cursor
+```
+
+### 2. Claude Desktop Extension (`.mcpb`)
 
 1. Download [`refhealth-feed-triage.mcpb`](https://refhealth.consulting/refhealth-feed-triage.mcpb).
 2. In Claude Desktop, open Settings → Extensions → Advanced settings → Install extension and select the file.
-3. Ask: “Use Healthcare Feed Triage on its included synthetic sample. Could this feed support a 24-hour follow-up trigger? Show the evidence and what I should ask the data owner.”
+
+### 3. Manual Process Config (`stdio`)
+
+Add to your `claude_desktop_config.json` or IDE MCP configuration:
+
+```json
+{
+  "mcpServers": {
+    "refhealth-feed-triage": {
+      "command": "node",
+      "args": ["/path/to/refhealth-feed-triage/mcp/server.mjs"]
+    }
+  }
+}
+```
+
+## Try it with Claude or Cursor
 
 Claude may ask you to allow the tool call. The bundled sample contains synthetic events, including a late delivery, duplicate, and invalid clock ordering.
 
@@ -30,3 +61,10 @@ npm test --prefix mcp
 ```
 
 The build writes `refhealth-feed-triage.mcpb` in the repository root. To inspect or run it without Claude Desktop, see `mcp/test/server.test.mjs` for an MCP client example. Source is MIT licensed. For support or contributions, open an issue or pull request here; do not attach patient data.
+
+## Related Healthcare Data Engineering Standards
+
+- **[Healthcare Data AI Operating System (HDAIOS) Specification](https://refhealth.consulting/hdaios.html)**: The 5-layer architectural specification connecting decisions, bitemporal data, enterprise BAAs, agent workflows, and governance.
+- **[Interactive HDAIOS Self-Assessment Tool](https://refhealth.consulting/hdaios.html#assessment)**: Free, zero-PHI architecture audit tool for healthcare engineering teams.
+- **[`refhealth-dbt-healthcare-checks`](https://github.com/apratsunrthd/refhealth-dbt-healthcare-checks)**: 7 generic dbt test macros enforcing bitemporal enrollment consistency, CMS NPI formatting, ICD-10/CPT validity, and midnight timestamp audits.
+

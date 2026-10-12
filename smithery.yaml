@@ -1,0 +1,12 @@
+# Smithery configuration for refhealth-feed-triage
+# https://smithery.ai/docs/config#smitheryyaml
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties: {}
+  commandFunction: |-
+    (config) => ({
+      command: 'node',
+      args: ['mcp/server.mjs']
+    })
